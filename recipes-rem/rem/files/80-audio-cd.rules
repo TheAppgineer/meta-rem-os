@@ -1,0 +1,1 @@
+SUBSYSTEM=="block", SUBSYSTEMS=="scsi", KERNEL=="sr?", ENV{ID_TYPE}=="cd", ENV{ID_CDROM}=="?*", ENV{ID_CDROM_MEDIA_TRACK_COUNT_AUDIO}=="?*", ACTION=="change", RUN+="/bin/su -lc 'echo 1 > /var/lib/docker/volumes/rem_data/_data/binds/roon-extension-cd-ripper/root/inserted' root"

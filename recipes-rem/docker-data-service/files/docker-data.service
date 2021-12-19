@@ -1,0 +1,10 @@
+[Unit]
+Description=docker-data service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/usr/bin/mount-xfs.sh
+
+[Install]
+WantedBy=multi-user.target

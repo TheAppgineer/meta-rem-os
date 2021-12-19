@@ -1,0 +1,12 @@
+[Unit]
+Description=Roon Extension Manager service
+Requires=docker.service systemd-time-wait-sync.service
+After=docker.service systemd-time-wait-sync.service
+
+[Service]
+User=root
+Restart=on-success
+ExecStart=/usr/bin/rem.sh
+
+[Install]
+WantedBy=multi-user.target
