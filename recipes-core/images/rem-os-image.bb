@@ -4,10 +4,6 @@ LICENSE = "MIT"
 
 require recipes-core/images/core-image-minimal.bb
 
-KERNEL_MODULES = " \
-    kernel-modules \
-"
-
 SOFTWARE_COMPONENTS = " \
     avahi-utils \
     docker-ce \
@@ -19,6 +15,13 @@ SOFTWARE_COMPONENTS = " \
     xfsprogs \
 "
 
-IMAGE_INSTALL_append = "${KERNEL_MODULES}${SOFTWARE_COMPONENTS}"
+IMAGE_INSTALL_append = " \
+    kernel-modules \
+    ${SOFTWARE_COMPONENTS} \
+"
+
+IMAGE_INSTALL_append_raspberrypi3 = " \
+    packagegroup-base-bluetooth \
+"
 
 IMAGE_FSTYPES = "ext4 tar.bz2 wic wic.bz2"

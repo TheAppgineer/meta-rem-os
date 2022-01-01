@@ -14,8 +14,8 @@ if [ ! -b "${DEVICE}p3" ];then
     parted ${DEVICE} mkpart primary ${PARTITION_START_SECTOR}s 100%
 
     # Format new XFS partition
-    mkfs.xfs ${DEVICE}p3
+    mkfs.xfs -f ${DEVICE}p3
 fi
 
 # Setup the Docker mountpoint
-mount -t xfs ${DEVICE}p3 /var/lib/docker
+mount -t xfs -o pquota ${DEVICE}p3 /var/lib/docker
