@@ -1,0 +1,26 @@
+[{
+    "display_name": "Entrypoints",
+    "extensions": [{
+        "author": "The Appgineer",
+        "display_name": "Spotify Entrypoint",
+        "description": "An Entrypoint that lets Spotify enter into your Roon system",
+        "image": {
+            "repo": "theappgineer/entrypoint-spotify",
+            "tags": {
+                "arm": "latest-arm32v7"
+            },
+            "binds": [
+                "/home/worker/config.json"
+            ],
+            "config": {
+                "HostConfig": {
+                    "Devices": [{
+                        "PathOnHost": "/dev/snd",
+                        "PathInContainer": "/dev/snd",
+                        "CgroupPermissions": "rwm"
+                    }]
+                }
+            }
+        }
+    }]
+}]

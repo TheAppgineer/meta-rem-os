@@ -4,7 +4,7 @@ Requires=docker.service systemd-time-wait-sync.service
 After=docker.service systemd-time-wait-sync.service
 
 [Service]
-User=root
+User=rem
 Restart=on-success
 ExecStart=/usr/bin/rem.sh
 

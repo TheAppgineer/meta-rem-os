@@ -19,4 +19,5 @@ do_install() {
     install -m 0644 ${WORKDIR}/docker-data.service ${D}${systemd_system_unitdir}
     install -d ${D}${bindir_native}
     install -m 0755 ${WORKDIR}/mount-xfs.sh ${D}${bindir_native}/mount-xfs.sh
+    install -d ${D}${localstatedir}/lib/docker
 }
