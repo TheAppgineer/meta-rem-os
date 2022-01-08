@@ -1,0 +1,3 @@
+{
+    "default-runtime": "io.containerd.runtime.v1.linux"
+}

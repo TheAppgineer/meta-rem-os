@@ -10,6 +10,6 @@ SOFTWARE_COMPONENTS_DEVELOP = " \
     nano \
 "
 
-IMAGE_INSTALL_append = "${SOFTWARE_COMPONENTS_DEVELOP}"
+IMAGE_INSTALL:append = "${SOFTWARE_COMPONENTS_DEVELOP}"
 
-IMAGE_FEATURES_append = " ssh-server-openssh"
+IMAGE_FEATURES:append = " ssh-server-openssh"

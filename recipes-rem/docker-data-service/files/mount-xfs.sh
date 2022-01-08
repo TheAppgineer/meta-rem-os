@@ -14,7 +14,7 @@ if [ ! -b "${DEVICE}p3" ];then
     parted ${DEVICE} mkpart primary ${PARTITION_START_SECTOR}s 100%
 
     # Format new XFS partition
-    mkfs.xfs -f ${DEVICE}p3
+    mkfs.xfs -f -m bigtime=1 ${DEVICE}p3
 fi
 
 # Setup the Docker mountpoint
