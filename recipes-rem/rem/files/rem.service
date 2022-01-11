@@ -7,6 +7,7 @@ After=docker.service systemd-time-wait-sync.service
 User=rem
 Restart=on-success
 ExecStart=/usr/bin/rem.sh
+ExecStop=/bin/sh -c "/bin/kill -9 `/bin/ps -o pid,args | /bin/grep -m 1 attach\ roon-extension-manager | /usr/bin/awk '{print $1}'` || exit 0"
 
 [Install]
 WantedBy=multi-user.target
